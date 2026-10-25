@@ -1,0 +1,21 @@
+version: 1
+
+hard_reject:
+  - repo_inaccessible: true
+  - license_missing: true
+  - estimated_size_kb: "> 500000"
+
+penalties:
+  inactive_days:
+    threshold: 90
+    weight: -15
+
+  existing_pr_count:
+    threshold: 3
+    weight: -20
+
+human_gate_required:
+  - credential_write_required: true
+  - touches_auth_code: true
+  - touches_crypto_code: true
+  - force_push: true

@@ -1,0 +1,15 @@
+# Dependency artifacts (pip)
+*.egg-info/
+*.pyc
+__pycache__/
+
+# Python cache
+.pytest_cache/
+
+# Local runtime state
+*.db
+*.sqlite
+*.sqlite3
+
+# Documentation checkpoints (workflow state, not source)
+docs/discovery/checkpoints/*.md
