@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=40.8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hbh"
+version = "0.1.0"
+description = "HBH Discovery Pipeline"
+requires-python = ">=3.14"
+dependencies = [
+    "PyYAML>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+hbh = "hbh.cli.main:run"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --ignore=tests/test_github_evidence_integration.py"
+
+[tool.setuptools]
+# `hbh` IS the repository root package (contains __init__.py at top).
+# subpackages are cli/, core/, discovery/ under it.
+packages = ["hbh", "hbh.cli", "hbh.core", "hbh.discovery", "hbh.discovery.github"]
